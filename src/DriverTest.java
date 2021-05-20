@@ -94,6 +94,31 @@ public class DriverTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> rubric4.addCriteria("Part F"));
         
     }
+    
+    //Test to ensuring adding grades with a rubric to system works
+    @Test                                               
+    @DisplayName("Add Grade should work")   
+    public void testGradeAdd() {
+    	ArrayList<Grade> allGrades = new ArrayList<>();
+    	
+    	driver.addGrade("Steve Smith", driver.rubrics.get(0));
+    	allGrades = driver.grades;
+        assertNotNull(allGrades);
+        assertEquals(allGrades.size(), 3);        
+    }
+    
+    //Test to ensure no more than 10 criteria per rubric
+    @Test
+    @DisplayName("No higher grade than 5")  
+    public void theKidsTooSmart() {
+        // Error path test
+    	Grade grade5 = new Grade("Sam O'Neill", driver.rubrics.get(0));
+		
+		
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> grade5.addGrade(0,6));
+        
+    }
 
   
 }
