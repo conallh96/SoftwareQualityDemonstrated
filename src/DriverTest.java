@@ -145,6 +145,29 @@ public class DriverTest {
       
       
     }
+    
+    //Test to ensure successful retrieval of grades from a specific Rubric.
+    @Test
+    @DisplayName("Get all rubrics Grades should work and be filled with one Rubrics Grades")   
+    public void testAllRubricsGrades() {
+      ArrayList<Grade> allRubricsGrades = new ArrayList<>();
+      
+      allRubricsGrades = driver.getAllRubricGrades("Rubric 1");
+      assertNotNull(allRubricsGrades);
+      assertEquals(allRubricsGrades.size(), 2);
+      
+      
+    }
+    
+    @Test                                               
+    @DisplayName("Add Score for Criterion should work")   
+    public void testScoreCriterion() {
+    	Grade grade = driver.grades.get(0);
+    	
+    	grade.addGrade(0, 5);
+    	
+    	assertEquals(grade.getMarks().get(0),5);
+    }
 
   
 }
