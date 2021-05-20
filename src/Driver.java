@@ -47,5 +47,18 @@ public class Driver {
 		grades.add(theGrade);
 	}
 	
+	//Get all Grades on file associated with a named Rubric
+	public ArrayList<Grade> getAllRubricGrades(String rubricName) {
+		ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubricName)) {
+				gradesFromRubric.add(g);
+			}
+		}
+		return gradesFromRubric;
+	}
+	
+	
 	
 }
