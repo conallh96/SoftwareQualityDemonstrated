@@ -176,6 +176,15 @@ public class DriverTest {
         assertEquals(3.7, driver.rubricAverage("Rubric 1"),      
         "Average Rubric Grade Should Equal 3.7");          
     }
+    
+    //Test to ensure Standard Deviation calculation for an entire rubric's grades is working.
+    @Test                                               
+    @DisplayName("Simple Rubric Std should work")   
+    public void testRubricStd() {
+        assertEquals(0.09999999999999987, driver.rubricStd("Rubric 1"),      
+        "Std of Rubric Grade Should Equal 0.09999999999999987");          
+    }
+    
   
 }
 

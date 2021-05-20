@@ -83,6 +83,43 @@ public class Driver {
 		
 	}
 	
+	//Standard Deviation calculation for an entire rubric's grades
+	public double rubricStd(String rubric) {
+	
+		ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+			
+			for (Grade g : grades) {
+				if(g.getRubric().getName().equals(rubric)) {
+					overallsFromRubric.add(g.getOverall());
+				}
+			}
+			
+			 
+		    double mean = rubricAverage(rubric);
+		    double temp = 0;
+
+		    for (double i : overallsFromRubric)
+		    {
+		        
+
+		        
+		        double squrDiffToMean = Math.pow(i - mean, 2);
+
+		        
+		        temp += squrDiffToMean;
+		    }
+
+		    
+		    double meanOfDiffs = (double) temp / (double) (overallsFromRubric.size());
+
+		    
+		    
+				
+		    return Math.sqrt(meanOfDiffs);
+		
+	}
+	
 	
 	
 }
