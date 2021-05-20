@@ -185,6 +185,14 @@ public class DriverTest {
         "Std of Rubric Grade Should Equal 0.09999999999999987");          
     }
     
+    //Test to ensure correct maximum grade is obtained from grades of specific rubric
+    @Test                                               
+    @DisplayName("Simple Rubric Max Grade should work")   
+    public void testRubricMax() {
+        assertEquals(3.8, driver.rubricMax("Rubric 1"),      
+        "Max Rubric Grade Should Equal 3.8");          
+    }
+    
   
 }
 

@@ -120,6 +120,21 @@ public class Driver {
 		
 	}
 	
+	//Method to return highest grade achieved in a specific rubric
+	public double rubricMax(String rubric) {
+		
+		ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+		return Collections.max(overallsFromRubric);
+		
+	}
+	
 	
 	
 }
