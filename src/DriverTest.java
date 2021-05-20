@@ -193,6 +193,14 @@ public class DriverTest {
         "Max Rubric Grade Should Equal 3.8");          
     }
     
+    //Test to ensure correct minimium grade achieved in a specific rubric is obtained.
+    @Test                                               
+    @DisplayName("Simple Rubric Min Grade should work")   
+    public void testRubricMin() {
+        assertEquals(3.6, driver.rubricMin("Rubric 1"),      
+        "Min Rubric Grade Should Equal 3.6");          
+    }
+    
   
 }
 

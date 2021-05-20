@@ -135,6 +135,20 @@ public class Driver {
 		
 	}
 	
+	//Returns lowest grade achieved in a specific rubric
+	public double rubricMin(String rubric) {
+	ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+		return Collections.min(overallsFromRubric);
+		
+	}
+	
 	
 	
 }
