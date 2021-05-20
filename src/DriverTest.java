@@ -209,7 +209,13 @@ public class DriverTest {
         "Average Criterion Grade Should Equal 3.0");          
     }
     
-    
+  //Test to ensure expected standard deviation of scores for a specific criterion is returned.
+    @Test                                               
+    @DisplayName("Simple Criterion Std should work")   
+    public void testCriterionStd() {
+        assertEquals(1.0, driver.criterionStd("Rubric 1", "Efficiency"),      
+        "Std of Criterion Grade Should Equal 1.0");          
+    }
   
 }
 
