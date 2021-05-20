@@ -2,9 +2,11 @@
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.*;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -47,6 +49,53 @@ public class DriverTest {
 		driver.grades.add(grade2);
     }
     
+    //Test to ensure rubrics can be added to the collection
+    @Test                                               
+    @DisplayName("Add Rubric should work")   
+    public void testRubricAdd() {
+    	ArrayList<Rubric> allRubrics = new ArrayList<>();
+    	
+    	driver.addRubric("Rubric 2");
+    	allRubrics = driver.getAllRubrics();
+        assertNotNull(allRubrics);
+        assertEquals(allRubrics.size(), 2);        
+    }
+    
+    //Test to add criteria to a rubric
+    @Test                                               
+    @DisplayName("Add Rubric Criterion should work")   
+    public void testRubricAddCriterion() {
+    	Rubric allRubric;
+    	
+    	allRubric = driver.getSpecificRubric("Rubric 1");
+    	allRubric.addCriteria("Sportsmanship");
+        assertNotNull(allRubric);
+        assertEquals(allRubric.getCriteria().size(), 6);        
+    }
+    
+    //Test to ensure no more than 10 criteria per rubric
+    @Test
+    @DisplayName("No more than 10 criteria")  
+    public void tooManyCriteria() {
+        // Error path test
+    	Rubric rubric4 = new Rubric("Rubric 4");
+		rubric4.addCriteria("Design");
+		rubric4.addCriteria("Implementation");
+		rubric4.addCriteria("Efficiency");
+		rubric4.addCriteria("Time Management");
+		rubric4.addCriteria("Interface");
+		rubric4.addCriteria("Part A");
+		rubric4.addCriteria("Part B");
+		rubric4.addCriteria("Part C");
+		rubric4.addCriteria("Part D");
+		rubric4.addCriteria("Part E");
+		
+		
+		Assertions.assertThrows(IllegalArgumentException.class, () -> rubric4.addCriteria("Part F"));
+        
+    }
+
   
 }
+
 
