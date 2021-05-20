@@ -149,6 +149,166 @@ public class Driver {
 		
 	}
 	
+	//retrieves all marks obtained in a specific criterion of a rubric
+	// and generates the average value.
+	public double criterionAverage(String rubric, String criterion) {
+		ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+		ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+		double total = 0.0;
+		
+		Rubric theRubric = getSpecificRubric(rubric);
+		int criterionIndex = 0;
+		
+		for(String s: theRubric.getCriteria()) {
+			if (s.equals(criterion)) {
+				criterionIndex = theRubric.getCriteria().indexOf(s);
+			}
+		}
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				gradesFromRubric.add(g);
+			}
+		}
+		
+		for (Grade g : gradesFromRubric) {
+			
+			scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+			
+		}
+		
+		
+		for (int i = 0; i < scoresOnCriteria.size(); i++)  {  
+		       total = total + scoresOnCriteria.get(i);
+		   }
+	
+	return total/scoresOnCriteria.size();
+		
+		
+		
+	}
+	
+	//returns the standard deviation of scores achieved in a specific rubric criterion
+public double criterionStd(String rubric, String criterion) {
+		
+		
+		ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+		ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+		double total = 0.0;
+		
+		Rubric theRubric = getSpecificRubric(rubric);
+		int criterionIndex = 0;
+		
+		for(String s: theRubric.getCriteria()) {
+			if (s.equals(criterion)) {
+				criterionIndex = theRubric.getCriteria().indexOf(s);
+			}
+		}
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				gradesFromRubric.add(g);
+			}
+		}
+		
+		for (Grade g : gradesFromRubric) {
+			
+			scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+			
+		}
+		
+		 
+	    double mean = criterionAverage(rubric, criterion);
+	    double temp = 0;
+
+	    for (double i : scoresOnCriteria)
+	    {
+	        
+
+	        
+	        double squrDiffToMean = Math.pow(i - mean, 2);
+
+	        
+	        temp += squrDiffToMean;
+	    }
+
+	    
+	    double meanOfDiffs = (double) temp / (double) (scoresOnCriteria.size());
+
+	    
+	    
+			
+	    return Math.sqrt(meanOfDiffs);
+		
+		
+	}
+
+//Return highest grade achieved in a criterion selected from a specific Rubric.
+public double criterionMax(String rubric, String criterion) {
+	
+	ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+	ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+	double total = 0.0;
+	
+	Rubric theRubric = getSpecificRubric(rubric);
+	int criterionIndex = 0;
+	
+	for(String s: theRubric.getCriteria()) {
+		if (s.equals(criterion)) {
+			criterionIndex = theRubric.getCriteria().indexOf(s);
+		}
+	}
+	
+	for (Grade g : grades) {
+		if(g.getRubric().getName().equals(rubric)) {
+			gradesFromRubric.add(g);
+		}
+	}
+	
+	for (Grade g : gradesFromRubric) {
+		
+		scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+		
+	}
+	
+	return Collections.max(scoresOnCriteria);
+	
+}
+
+//Return lowest grade achieved in a criterion selected from a specific Rubric.
+public double criterionMin(String rubric, String criterion) {
+	
+	ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+	ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+	double total = 0.0;
+	
+	Rubric theRubric = getSpecificRubric(rubric);
+	int criterionIndex = 0;
+	
+	for(String s: theRubric.getCriteria()) {
+		if (s.equals(criterion)) {
+			criterionIndex = theRubric.getCriteria().indexOf(s);
+		}
+	}
+	
+	for (Grade g : grades) {
+		if(g.getRubric().getName().equals(rubric)) {
+			gradesFromRubric.add(g);
+		}
+	}
+	
+	for (Grade g : gradesFromRubric) {
+		
+		scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+		
+	}
+	
+	return Collections.min(scoresOnCriteria);
+	
+}
+	
+	
+	
 	
 	
 }

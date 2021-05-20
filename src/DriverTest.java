@@ -201,7 +201,37 @@ public class DriverTest {
         "Min Rubric Grade Should Equal 3.6");          
     }
     
+    //Test to ensure expected average for a specific criterion is returned.
+    @Test                                               
+    @DisplayName("Simple Criterion Average should work")   
+    public void testCriterionAverage() {
+        assertEquals(3.0, driver.criterionAverage("Rubric 1", "Efficiency"),      
+        "Average Criterion Grade Should Equal 3.0");          
+    }
+    
+  //Test to ensure expected standard deviation of scores for a specific criterion is returned.
+    @Test                                               
+    @DisplayName("Simple Criterion Std should work")   
+    public void testCriterionStd() {
+        assertEquals(1.0, driver.criterionStd("Rubric 1", "Efficiency"),      
+        "Std of Criterion Grade Should Equal 1.0");          
+    }
   
+    //Test to ensure the expected maximum grade achieved in a criterion is returned with no issues.
+    @Test                                               
+    @DisplayName("Simple Criterion Max Grade should work")   
+    public void testCriterionMax() {
+        assertEquals(4.0, driver.criterionMax("Rubric 1", "Efficiency"),      
+        "Max Criterion Grade Should Equal 4.0");          
+    }
+    
+    //Test to ensure the expected minimum grade achieved in a criterion is returned with no issues.
+    @Test                                               
+    @DisplayName("Simple Criterion Min Grade should work")   
+    public void testCriterionMin() {
+        assertEquals(2.0, driver.criterionMin("Rubric 1", "Efficiency"),      
+        "Min Criterion Grade Should Equal 2.0");          
+    }
 }
 
 
