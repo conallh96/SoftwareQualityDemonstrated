@@ -149,6 +149,45 @@ public class Driver {
 		
 	}
 	
+	//retrieves all marks obtained in a specific criterion of a rubric
+	// and generates the average value.
+	public double criterionAverage(String rubric, String criterion) {
+		ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+		ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+		double total = 0.0;
+		
+		Rubric theRubric = getSpecificRubric(rubric);
+		int criterionIndex = 0;
+		
+		for(String s: theRubric.getCriteria()) {
+			if (s.equals(criterion)) {
+				criterionIndex = theRubric.getCriteria().indexOf(s);
+			}
+		}
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				gradesFromRubric.add(g);
+			}
+		}
+		
+		for (Grade g : gradesFromRubric) {
+			
+			scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+			
+		}
+		
+		
+		for (int i = 0; i < scoresOnCriteria.size(); i++)  {  
+		       total = total + scoresOnCriteria.get(i);
+		   }
+	
+	return total/scoresOnCriteria.size();
+		
+		
+		
+	}
+	
 	
 	
 }

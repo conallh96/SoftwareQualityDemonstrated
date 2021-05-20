@@ -201,6 +201,15 @@ public class DriverTest {
         "Min Rubric Grade Should Equal 3.6");          
     }
     
+    //Test to ensure expected average for a specific criterion is returned.
+    @Test                                               
+    @DisplayName("Simple Criterion Average should work")   
+    public void testCriterionAverage() {
+        assertEquals(3.0, driver.criterionAverage("Rubric 1", "Efficiency"),      
+        "Average Criterion Grade Should Equal 3.0");          
+    }
+    
+    
   
 }
 
