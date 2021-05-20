@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class Grade {
-	
+	//Grade object holds a students name, the rubric they are being marked against
+	// and the overall average grade for the rubric.
 	private String studentName;
 	private Rubric rubric;
 	private double overall;

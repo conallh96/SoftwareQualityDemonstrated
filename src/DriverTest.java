@@ -10,6 +10,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class DriverTest {
+	
+	//Test class that tests methods in driver class with hardcoded values to ensure 
+	// methods act accordingly to system design. 
 
 	private Driver driver = new Driver();
 
