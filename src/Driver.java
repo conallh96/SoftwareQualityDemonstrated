@@ -41,4 +41,11 @@ public class Driver {
 		return rubrics;
 	}
 	
+	//Add a blank grade for a student assigned to a specific rubric
+	public void addGrade(String name, Rubric rubric) {
+		Grade theGrade = new Grade(name, rubric);
+		grades.add(theGrade);
+	}
+	
+	
 }

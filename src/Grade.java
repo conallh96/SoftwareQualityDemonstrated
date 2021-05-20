@@ -43,6 +43,10 @@ public class Grade {
 
 	
 	public void addGrade(int criterion, int score) {
+		if (score>5){
+	        throw new IllegalArgumentException("Maximum grade of 5 allowed!");
+	      }
+		else {
 		marks.set(criterion, score);
 		
 		double overallHere = 0;
@@ -56,6 +60,7 @@ public class Grade {
 		
 		overallHere = (double)total/(double)marks.size();
 		overall = overallHere;
+		}
 		
 		
 	}
