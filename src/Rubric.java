@@ -29,7 +29,14 @@ public class Rubric {
 	
 	public void addCriteria(String criterion) {
 		
-		criteria.add(criterion);
+		  if (criteria.size()>9) {
+		        throw new IllegalArgumentException("Maximum of 10 criteria allowed!");
+		      }
+		  else {
+			  criteria.add(criterion);
+		  }
+		
+		
 		
 	}
 
