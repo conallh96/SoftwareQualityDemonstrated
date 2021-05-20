@@ -119,6 +119,32 @@ public class DriverTest {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> grade5.addGrade(0,6));
         
     }
+    
+    //Test to ensure all rubrics in the system can be retrieved
+    @Test                                               
+    @DisplayName("Get all rubrics should work and be filled with one Rubric")   
+    public void testAllRubrics() {
+      ArrayList<Rubric> allRubrics = new ArrayList<>();
+      
+      allRubrics = driver.getAllRubrics();
+      assertNotNull(allRubrics);
+      assertEquals(allRubrics.size(), 1);
+      
+      
+    }
+    
+    //Test to ensure a specific rubric can be retrieved by name
+    @Test
+    @DisplayName("Get a specific rubric by name")   
+    public void testSpecificRubric() {
+      Rubric theRubric = driver.getSpecificRubric("Rubric 1");
+      
+     
+      assertNotNull(theRubric);
+      assertEquals(theRubric.getName(), "Rubric 1");
+      
+      
+    }
 
   
 }
