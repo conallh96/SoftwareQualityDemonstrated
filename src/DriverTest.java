@@ -217,6 +217,13 @@ public class DriverTest {
         "Std of Criterion Grade Should Equal 1.0");          
     }
   
+    //Test to ensure the expected maximum grade achieved in a criterion is returned with no issues.
+    @Test                                               
+    @DisplayName("Simple Criterion Max Grade should work")   
+    public void testCriterionMax() {
+        assertEquals(4.0, driver.criterionMax("Rubric 1", "Efficiency"),      
+        "Max Criterion Grade Should Equal 4.0");          
+    }
 }
 
 

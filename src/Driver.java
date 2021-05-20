@@ -242,6 +242,38 @@ public double criterionStd(String rubric, String criterion) {
 		
 		
 	}
+
+//Return highest grade achieved in a criterion selected from a specific Rubric.
+public double criterionMax(String rubric, String criterion) {
+	
+	ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+	ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+	double total = 0.0;
+	
+	Rubric theRubric = getSpecificRubric(rubric);
+	int criterionIndex = 0;
+	
+	for(String s: theRubric.getCriteria()) {
+		if (s.equals(criterion)) {
+			criterionIndex = theRubric.getCriteria().indexOf(s);
+		}
+	}
+	
+	for (Grade g : grades) {
+		if(g.getRubric().getName().equals(rubric)) {
+			gradesFromRubric.add(g);
+		}
+	}
+	
+	for (Grade g : gradesFromRubric) {
+		
+		scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+		
+	}
+	
+	return Collections.max(scoresOnCriteria);
+	
+}
 	
 	
 	
