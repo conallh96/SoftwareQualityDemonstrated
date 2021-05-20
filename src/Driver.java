@@ -274,6 +274,38 @@ public double criterionMax(String rubric, String criterion) {
 	return Collections.max(scoresOnCriteria);
 	
 }
+
+//Return lowest grade achieved in a criterion selected from a specific Rubric.
+public double criterionMin(String rubric, String criterion) {
+	
+	ArrayList<Grade> gradesFromRubric = new ArrayList<>();
+	ArrayList<Integer> scoresOnCriteria = new ArrayList<>();
+	double total = 0.0;
+	
+	Rubric theRubric = getSpecificRubric(rubric);
+	int criterionIndex = 0;
+	
+	for(String s: theRubric.getCriteria()) {
+		if (s.equals(criterion)) {
+			criterionIndex = theRubric.getCriteria().indexOf(s);
+		}
+	}
+	
+	for (Grade g : grades) {
+		if(g.getRubric().getName().equals(rubric)) {
+			gradesFromRubric.add(g);
+		}
+	}
+	
+	for (Grade g : gradesFromRubric) {
+		
+		scoresOnCriteria.add(g.getMarks().get(criterionIndex));
+		
+	}
+	
+	return Collections.min(scoresOnCriteria);
+	
+}
 	
 	
 	

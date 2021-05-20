@@ -224,6 +224,14 @@ public class DriverTest {
         assertEquals(4.0, driver.criterionMax("Rubric 1", "Efficiency"),      
         "Max Criterion Grade Should Equal 4.0");          
     }
+    
+    //Test to ensure the expected minimum grade achieved in a criterion is returned with no issues.
+    @Test                                               
+    @DisplayName("Simple Criterion Min Grade should work")   
+    public void testCriterionMin() {
+        assertEquals(2.0, driver.criterionMin("Rubric 1", "Efficiency"),      
+        "Min Criterion Grade Should Equal 2.0");          
+    }
 }
 
 
