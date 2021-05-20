@@ -59,6 +59,30 @@ public class Driver {
 		return gradesFromRubric;
 	}
 	
+	// Return the average overall grade from grades associated with a rubric
+	public double rubricAverage(String rubric) {
+	ArrayList<Double> overallsFromRubric = new ArrayList<>();
+	double total = 0.0;
+		
+		for (Grade g : grades) {
+			
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+			
+			
+			for (int i = 0; i < overallsFromRubric.size(); i++)  {  
+			       total = total + overallsFromRubric.get(i);
+			   }
+		
+		return total/overallsFromRubric.size();
+		
+		
+			
+		
+	}
+	
 	
 	
 }

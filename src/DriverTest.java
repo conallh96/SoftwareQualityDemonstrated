@@ -169,6 +169,13 @@ public class DriverTest {
     	assertEquals(grade.getMarks().get(0),5);
     }
 
+    //Test to ensure average grade achieved in a Rubric is correctly retrieved.
+    @Test                                               
+    @DisplayName("Simple Rubric Average should work")   
+    public void testRubricAverage() {
+        assertEquals(3.7, driver.rubricAverage("Rubric 1"),      
+        "Average Rubric Grade Should Equal 3.7");          
+    }
   
 }
 
