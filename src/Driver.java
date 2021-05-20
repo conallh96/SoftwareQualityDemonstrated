@@ -59,6 +59,96 @@ public class Driver {
 		return gradesFromRubric;
 	}
 	
+	// Return the average overall grade from grades associated with a rubric
+	public double rubricAverage(String rubric) {
+	ArrayList<Double> overallsFromRubric = new ArrayList<>();
+	double total = 0.0;
+		
+		for (Grade g : grades) {
+			
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+			
+			
+			for (int i = 0; i < overallsFromRubric.size(); i++)  {  
+			       total = total + overallsFromRubric.get(i);
+			   }
+		
+		return total/overallsFromRubric.size();
+		
+		
+			
+		
+	}
+	
+	//Standard Deviation calculation for an entire rubric's grades
+	public double rubricStd(String rubric) {
+	
+		ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+			
+			for (Grade g : grades) {
+				if(g.getRubric().getName().equals(rubric)) {
+					overallsFromRubric.add(g.getOverall());
+				}
+			}
+			
+			 
+		    double mean = rubricAverage(rubric);
+		    double temp = 0;
+
+		    for (double i : overallsFromRubric)
+		    {
+		        
+
+		        
+		        double squrDiffToMean = Math.pow(i - mean, 2);
+
+		        
+		        temp += squrDiffToMean;
+		    }
+
+		    
+		    double meanOfDiffs = (double) temp / (double) (overallsFromRubric.size());
+
+		    
+		    
+				
+		    return Math.sqrt(meanOfDiffs);
+		
+	}
+	
+	//Method to return highest grade achieved in a specific rubric
+	public double rubricMax(String rubric) {
+		
+		ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+		return Collections.max(overallsFromRubric);
+		
+	}
+	
+	//Returns lowest grade achieved in a specific rubric
+	public double rubricMin(String rubric) {
+	ArrayList<Double> overallsFromRubric = new ArrayList<>();
+		
+		
+		for (Grade g : grades) {
+			if(g.getRubric().getName().equals(rubric)) {
+				overallsFromRubric.add(g.getOverall());
+			}
+		}
+		return Collections.min(overallsFromRubric);
+		
+	}
+	
 	
 	
 }

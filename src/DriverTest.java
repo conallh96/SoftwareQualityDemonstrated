@@ -169,6 +169,38 @@ public class DriverTest {
     	assertEquals(grade.getMarks().get(0),5);
     }
 
+    //Test to ensure average grade achieved in a Rubric is correctly retrieved.
+    @Test                                               
+    @DisplayName("Simple Rubric Average should work")   
+    public void testRubricAverage() {
+        assertEquals(3.7, driver.rubricAverage("Rubric 1"),      
+        "Average Rubric Grade Should Equal 3.7");          
+    }
+    
+    //Test to ensure Standard Deviation calculation for an entire rubric's grades is working.
+    @Test                                               
+    @DisplayName("Simple Rubric Std should work")   
+    public void testRubricStd() {
+        assertEquals(0.09999999999999987, driver.rubricStd("Rubric 1"),      
+        "Std of Rubric Grade Should Equal 0.09999999999999987");          
+    }
+    
+    //Test to ensure correct maximum grade is obtained from grades of specific rubric
+    @Test                                               
+    @DisplayName("Simple Rubric Max Grade should work")   
+    public void testRubricMax() {
+        assertEquals(3.8, driver.rubricMax("Rubric 1"),      
+        "Max Rubric Grade Should Equal 3.8");          
+    }
+    
+    //Test to ensure correct minimium grade achieved in a specific rubric is obtained.
+    @Test                                               
+    @DisplayName("Simple Rubric Min Grade should work")   
+    public void testRubricMin() {
+        assertEquals(3.6, driver.rubricMin("Rubric 1"),      
+        "Min Rubric Grade Should Equal 3.6");          
+    }
+    
   
 }
 
