@@ -68,10 +68,10 @@ When a team member submits a pull request in the project repository, a code revi
 2.	Testing: Has the code produced been affectively and appropriately tested?
 3.	Test Coverage: Is a satisfactory amount of the merged code covered by these relevant tests?
 4.	Duplication: Has any Code in the request been duplicated?
-5.	Complexity: Is the code being submitted to verbose or too long is it using most efficient solutions?
+5.	Complexity: Is the code being submitted too verbose or too long is it using most efficient solutions?
 6.	Reliability: Would the code being merged work just as efficiently with large loads? Is the code written with the possibility of it being reused for similar applications?
 
 
 [In the linked pull request](https://github.com/conallh96/SoftwareQualityDemonstrated/pull/3), the code reviewer has given the developer valuable feedback on their submitted code through use of the checklist, and would have found any shortcomings present should there have been any. Relevant testing has been ackowledged as well as sufficient code coverage of efficiently written solutions.
 
-Code Reviews allow for the monitoring and ensuring of consistent, quality code throughout the devlopment stage for teams in our organisation through constant and incremental review such as the example provided.
+Code Reviews allow for the monitoring and ensuring of consistent, quality code throughout the development stage for teams in our organisation through constant and incremental review such as the example provided.
