@@ -74,4 +74,4 @@ When a team member submits a pull request in the project repository, a code revi
 
 [In the linked pull request](https://github.com/conallh96/SoftwareQualityDemonstrated/pull/3), the code reviewer has given the developer valuable feedback on their submitted code through use of the checklist, and would have found any shortcomings present should there have been any. Relevant testing has been ackowledged as well as sufficient code coverage of efficiently written solutions.
 
-Code Reviews allow for the monitoring and ensuring of consistent, quality code throughot the devlopment stage for teams in our organisation through constant and incremental review such as the example provided.
+Code Reviews allow for the monitoring and ensuring of consistent, quality code throughout the devlopment stage for teams in our organisation through constant and incremental review such as the example provided.
