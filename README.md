@@ -11,6 +11,16 @@ The tasks have been prioritised using the MoSCoW rules which refer to must have,
 
 In order to effectively estimate how much work the your team is capable of completing in a sprint, you can calculate the work completed in past sprints and use this knowledge to more accurately estimate the teams work capacity for future sprints. This measurement is known as sprint velocity and is calculated by calculating the average story points completed in past sprints. If your team has completed 12, 14 and 10 story points in the last three completed sprints, you would know your team has an average sprint velocity of 12. This number will allow SCRUM masters to plan sprints and their involved tasks more accurately without placing unrealistic work expectancies on team members.
 
+## Unit Testing and Test Driven Development
+
+Test driven development inloves breaking software components up into test cases which must be satisfied in order to enable the code to work as intended and ideally help prevent defects.
+
+When implementing our approach to test driven development, we adopt unit tests developed alongside each software component. Sofware components are small pieces of code produced to execute a single task and unit testing focuses on making sure these components operate as intended. It is implied that we should consider designing unit tests before the components themselves as it provides a guideline on exactly what the component is trying to achieve.
+
+[In the linked commit](https://github.com/conallh96/SoftwareQualityDemonstrated/commit/ae674faf643509e4c192a44ad3bb12fb335ac4f5) we can see a clear adoption of our test driven approach with unit testing through JUnit testing. Grading rubrics in the sample project must be added to the system collection and may not have more than 10 criteria against which students can be marked. The tests designed ensure that Rubrics can be created with up to 10 criteria allowed per rubric. The code to support these tests is also provided and once all test cases have passed, developers can be satisfied with the functionality their component has achieved.
+
+This approach to unit testing and test driven development greatly improves the quality of the code in our projects and significanly decreases project times and costs due to reduced error fixing and debugging.
+
 ## Code Reviews 
 
 When a team member submits a pull request in the project repo, a code reviewer should always check the code in question in order to ensure it is up to company standard and fit for purpose. Effective code reviewing improves the quality of a team’s code substantially as well as improving the skills of developers through open dialogue and constant feedback from reviewers. The checks a reviewer should make during pull requests are the following. 
