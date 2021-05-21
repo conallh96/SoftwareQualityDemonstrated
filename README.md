@@ -21,6 +21,33 @@ When implementing our approach to test driven development, we adopt unit tests d
 
 This approach to unit testing and test driven development greatly improves the quality of the code in our projects and significanly decreases project times and costs due to reduced error fixing and debugging.
 
+## Test Coverage Metric 
+
+In order to ensure unit testing has covered a satisfactory proportion of the code being written, a test coverage tool must be used. The test coverage metric allows developers to understand how much of the code has been included in unit tests and in turn, implemented to be confirmed fit for purpose.
+
+For software project in our organisation, we implement the use of EclEmma, Eclipse's plug-in which is integrated to check the coverage of code in a project by JUnit tests. The tool will return a score out of 100 for coverage as well as highlighting areas in the project which are yet to be tested by JUnit. 
+
+
+![alt text](https://i.ibb.co/fXt1XYP/Screenshot-2021-05-20-at-20-48-38.png "Coverage Before Code Tested")
+
+As seen from above, EclEmma tells use we have a code coverage statistic of 88.6%, a level which can be increased through more thorough JUnit tests covering more paths within the project. 
+
+![alt text](https://i.ibb.co/VvBTL0N/Screenshot-2021-05-20-at-20-48-55.png "Code Not Yet Covered")
+
+The above screenshot shows us EclEmma highlighting that the method for retrieving the average score from a rubric has not yet been covered by unit tests.
+
+![alt text](https://i.ibb.co/SJXJGrW/Screenshot-2021-05-20-at-20-49-18.png "New Test Added")
+
+In the test class, a new test is produced to ensure that the expected number for rubric average is returned based off hardcoded parameters initialised in the test class.
+
+![alt text](https://i.ibb.co/j8scRVp/Screenshot-2021-05-20-at-20-49-46.png "Coverage After Code Tested")
+
+When requesting a new test coverage score, EclEmma now indicates that 98.4% of the ode in the active project has been covered. 
+
+![alt text](https://i.ibb.co/NLcjWtH/Screenshot-2021-05-20-at-20-49-55.png "Code Covered")
+
+EclEmma also recognises and indicates to the developer that the method for returning a rubric's average grade has been covered by JUnit tests successfully.
+
 ## Code Reviews 
 
 When a team member submits a pull request in the project repo, a code reviewer should always check the code in question in order to ensure it is up to company standard and fit for purpose. Effective code reviewing improves the quality of a team’s code substantially as well as improving the skills of developers through open dialogue and constant feedback from reviewers. The checks a reviewer should make during pull requests are the following. 
