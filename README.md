@@ -48,6 +48,18 @@ When requesting a new test coverage score, EclEmma now indicates that 98.4% of t
 
 EclEmma also recognises and indicates to the developer that the method for returning a rubric's average grade has been covered by JUnit tests successfully.
 
+## Team Version Control
+
+When working on team projects, developers will work mainly on feature branches which are based from the develop branch. The develop branch is based off the master branch which is the final point of a how a project stands in completion. 
+
+While developing new functionality, developer will create a feature branch from the develop branch and implement new code seperately without affecting that of the others. Once a component has been completed, the developer can submit a [pull request](https://github.com/conallh96/SoftwareQualityDemonstrated/pull/3) to merge their quality code with the working code of others on the develop branch. 
+
+When substantial and satisfactory progress has been aachieved on the develop branch, this can be merged with the master branch by means of pull request of a relase branch. The master branch is deployable and should be a functioning piece of software.
+
+![alt text](https://i.ibb.co/n600gtP/Screenshot-2021-05-21-at-11-45-04.png "Project Branches")
+
+From the above breakdown of the project's branches, we can see the devlop branch set as the default branch to base feature bracnhes on. The develop branch is up to date and all feature branches have been merged into it successfully. The master branch here is yet to receive a pull request for the merging of a release branch and is not yet up to date with project progress.
+
 ## Code Reviews 
 
 When a team member submits a pull request in the project repo, a code reviewer should always check the code in question in order to ensure it is up to company standard and fit for purpose. Effective code reviewing improves the quality of a team’s code substantially as well as improving the skills of developers through open dialogue and constant feedback from reviewers. The checks a reviewer should make during pull requests are the following. 
